@@ -1,4 +1,4 @@
-#Time Log
+# Time Log
 
 | Date | Task | Hours | Notes|
 |------|------|-------|------|

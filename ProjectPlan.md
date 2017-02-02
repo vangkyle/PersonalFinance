@@ -1,6 +1,6 @@
-#Project Plan
+# Project Plan
 
-###Week1
+### Week1
 - [X] Create project repository on GitHub
 - [X] Complete Problem Statement
 - [ ] Determine possible Web Services or APIs to use
@@ -8,4 +8,4 @@
 - [ ] Time log entries
 - [X] Begin project plan
 
-###Week2
+### Week2

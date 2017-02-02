@@ -1,2 +1,3 @@
-# PersonalFinance
-Tracking personal finance
+# Kyle Vang's Individual Project
+
+### Problem Statement
