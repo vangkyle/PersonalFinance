@@ -26,6 +26,8 @@ I'm positive that if your able to keep up with these expense effectively, it wil
   * JFreeChart
 
 ### Design
+* [Screen Design](DesignDocuments/Screens.md)
+* [Application Flow](DesignDocuments/applicationFlow.md)
 
 ### Project Plan
 
