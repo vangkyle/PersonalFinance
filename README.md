@@ -29,7 +29,7 @@ I'm positive that if your able to keep up with these expense effectively, it wil
 * [Screen Design](DesignDocuments/Screens.md)
 * [Application Flow](DesignDocuments/applicationFlow.md)
 
-### Project Plan
+### [Project Plan](ProjectPlan.md)
 
-### Time Log
+### [Time Log](TimeLog.md)
 
