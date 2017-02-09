@@ -31,7 +31,7 @@ more detail.
 ### Week 4
 - [ ] Finish JSPs
 - [X] Add Hibernate config
-- [X] Create DAO for user crud
+- [ ] Create DAO for user crud
 - [ ] Add unit tests for DAO
 - [ ] Add user login 
 - [ ] Add user registration/sign up
