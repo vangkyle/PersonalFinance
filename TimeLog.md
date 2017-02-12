@@ -11,3 +11,4 @@
 | 2/8/17 | Project plan finish and pushed to repository | 1 | Will add more when project progresses. |
 | 2/8/17 | Started basic JSPs (index, head, and taglib)  | .25 | |
 | 2/8/17 | Set up logging, unit testing to project and add Hibernate config  | .5 | Basic set up is done but will implement to project once classes are developed |
+| 2/11/17 | Created SignUp/In JSPs, User class and Login servlet | 1 | Login servlet not quite finish yet. |
