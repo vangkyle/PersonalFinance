@@ -10,18 +10,28 @@
 <%@include file="head.jsp"%>
 <html>
     <body>
-        <h2>Sign In</h2>
-        <form action="sign">
-            <div>
-                <label for="signInEmail">Email: </label>
-                <input type="text" id="signInEmail" placeholder="Enter email">
-            </div>
-            <div>
-                <label for="signInPassword">Password: </label>
-                <input type="text" id="signInPassword" placeholder="Enter password">
-            </div>
-            <button type="button" name="submit" value="submit">Submit</button>
-            <button type="button" name="clear" value="clear">Clear</button>
-        </form>
+        <div class="container">
+            <h2>Login</h2>
+            <form action="sign" class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="signInEmail">Email: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="signInEmail" placeholder="Enter email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="signInPassword">Password: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="signInPassword" placeholder="Enter password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" name="submit" value="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" name="clear" value="reset" class="btn btn-primary" action="">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 </body>
 </html>
