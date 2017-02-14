@@ -2,13 +2,13 @@ package edu.matc.personalfinance.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by kvang on 2/9/17.
  */
+@Entity
+@Table(name = "user")
 public class User {
 
     @Id
