@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <h2>Sign Up</h2>
-        <form action="/" class="form-horizontal">
+        <form action="" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="signUpFirstName">First Name: </label>
                 <div class="col-sm-10">

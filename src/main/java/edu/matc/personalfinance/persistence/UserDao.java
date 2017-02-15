@@ -133,8 +133,28 @@ public class UserDao {
         return id;
     }
 
+    // make sure one to many annotation works for tables.
+    public void addToBothTables() {
+        logger.info("Hibernate one to many (Annotation)");
+        Session session = null;
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+
+            User user = new User();
+            user.setFirstName("John");
+            user.setLastName("Smith");
+            user.setEmail("jsmith@net.com");
+            user.setUserName("jsmith");
+            user.setPassword("smith");
+            session.save(user);
+
+
+        }
+    }
 
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
+
 }

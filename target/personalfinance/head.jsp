@@ -24,20 +24,23 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
 
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand"> FPC Finance Tracker <span class="glyphicon glyphicon-piggy-bank"></span></a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"> FPC Finance Tracker <span class="glyphicon glyphicon-piggy-bank"></span></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <%-- TODO fix links to servlet, just testing to make sure links work. --%>
+                <li class="active"><a href="index.jsp">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <%-- TODO fix links to servlet, just testing to make sure links work. --%>
+                <li><a href="signUp.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="signIn.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="/index.jsp">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signUp.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="/signIn.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-    </div>
-</nav></body>
+    </nav>
+</body>
 </head>

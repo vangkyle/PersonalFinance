@@ -36,8 +36,8 @@ more detail.
 - [ ] Add user login 
 - [ ] Add user registration/sign up
 - [ ] Time log entries
-- [ ] Add Maven for building
-- [ ] Add entities for remaining tables
+- [X] Add Maven for building
+- [X] Add entities for remaining tables
 
 ### Week 5
 
