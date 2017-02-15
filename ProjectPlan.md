@@ -45,7 +45,7 @@ more detail.
 - [ ] Create DAO for user
 - [ ] Create DAO for transaction report
 - [ ] Add tests for new functionality
-- [ ] Add project to AWS
+- [X] Add project to AWS
 
 ### Week 6
 - [ ] Time log entries
