@@ -12,17 +12,17 @@
     <body>
         <div class="container">
             <h2>Login</h2>
-            <form action="sign" class="form-horizontal">
+            <form action="login" class="form-horizontal">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="signInEmail">Email: </label>
+                    <label class="control-label col-sm-2" for="signInUsername">Username: </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="signInEmail" placeholder="Enter email">
+                        <input type="text" class="form-control" id="signInUsername" placeholder="Username">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="signInPassword">Password: </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="signInPassword" placeholder="Enter password">
+                        <input type="text" class="form-control" id="signInPassword" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">

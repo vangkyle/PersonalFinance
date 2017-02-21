@@ -8,9 +8,7 @@ import javax.persistence.*;
  * Created by kvang on 2/9/17.
  */
 @Entity
-@Table(name = "user", catalog = "financetracker", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "email")
-})
+@Table(name = "user", catalog = "financetracker")
 public class User {
 
     @Id

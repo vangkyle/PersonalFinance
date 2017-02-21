@@ -15,40 +15,46 @@
 <body>
     <div class="container">
         <h2>Sign Up</h2>
-        <form action="" class="form-horizontal">
+        <form action="signup" class="form-horizontal" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="signUpFirstName">First Name: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="signUpFirstName" placeholder="Enter first name">
+                    <input type="text" class="form-control" name="signUpFirstName" id="signUpFirstName" placeholder="First Name">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="signUpLastName">Last Name: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="signUpLastName" placeholder="Enter last name">
+                    <input type="text" class="form-control" name="signUpLastName" id="signUpLastName" placeholder="Last Name">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="signUpEmail">Email Address: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="signUpEmail" placeholder="Enter email">
+                    <input type="text" class="form-control" name="signUpEmail" id="signUpEmail" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="signUpUsername">Username: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="signUpUsername" id="signUpUsername" placeholder="Username">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="signUpPassword">Password: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="signUpPassword" placeholder="Enter password">
+                    <input type="text" class="form-control" name="signUpPassword" id="signUpPassword" placeholder="Password">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="signUpReEnterPassword">Re-Enter Password: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="signUpReEnterPassword" placeholder="Re-Enter password">
+                    <input type="text" class="form-control" name="signUpReEnterPassword" id="signUpReEnterPassword" placeholder="Re-Enter Password">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" name="submit" value="submit" class="btn btn-primary">Submit</button>
+                    <input type="submit" name="submit" value="submit" class="btn btn-primary"/>
                     <button type="reset" name="clear" value="reset" class="btn btn-primary">Clear</button>
                 </div>
             </div>

@@ -11,9 +11,7 @@ import java.time.LocalDate;
  * Created by kvang on 2/14/17.
  */
 @Entity
-@Table(name = "transaction", catalog = "financetracker", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "date")
-})
+@Table(name = "transaction", catalog = "financetracker")
 public class TransactionRecord implements java.io.Serializable {
 
     @Id
@@ -23,7 +21,7 @@ public class TransactionRecord implements java.io.Serializable {
     private int transid;
 
     @Column(name = "date")
-    @Converter(converter = LocalDateAttributeConverter.class)
+    @Convert(converter = LocalDateAttributeConverter.class)
     private LocalDate date;
 
     @Column(name = "type")

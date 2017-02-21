@@ -103,9 +103,9 @@ public class UserDao {
             id = (int) session.save(user);
             transaction.commit();
         } catch (HibernateException he) {
-            logger.error("Exception: " + he);
+            logger.error("Hibernate Exception: " + he);
         } catch (Exception e) {
-            logger.error("Exception: " + e.getMessage());
+            logger.error("Exception add(): " + e);
         } finally {
             if (session != null) {
                 session.close();
@@ -114,44 +114,54 @@ public class UserDao {
         return id;
     }
 
-    public int deleteUserById(int id) {
+    public int addUserFromSignUp(String firstName, String lastName, String email, String userName, String password) {
+        int id = 0;
         Session session = null;
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
-            session.delete(id);
+            User user = new User();
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+            user.setEmail(email);
+            user.setUserName(userName);
+            user.setPassword(password);
+            id = (int) session.save(user);
+            transaction.commit();
+            logger.info(transaction);
+            logger.info("Up to this works");
+        } catch (HibernateException he) {
+            logger.error("Hibernate Exception: " + he);
+        } catch (Exception e) {
+            logger.error("Exception addUserFromSignUp: " + e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return id;
+    }
+
+
+    public void deleteUser(int id) {
+        User user = null;
+        Session session = null;
+        try {
+            session = openSession();
+            Transaction transaction = session.beginTransaction();
+            session.delete(user);
             transaction.commit();
         } catch (HibernateException he) {
             logger.error("Exception: " + he);
         } catch (Exception e) {
-            logger.error("Exception: " + e.getMessage());
+            logger.error("Exception: " + e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-        return id;
     }
 
-    // make sure one to many annotation works for tables.
-    public void addToBothTables() {
-        logger.info("Hibernate one to many (Annotation)");
-        Session session = null;
-        try {
-            session = openSession();
-            Transaction transaction = session.beginTransaction();
-
-            User user = new User();
-            user.setFirstName("John");
-            user.setLastName("Smith");
-            user.setEmail("jsmith@net.com");
-            user.setUserName("jsmith");
-            user.setPassword("smith");
-            session.save(user);
-
-
-        }
-    }
 
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();

@@ -22,6 +22,7 @@
 
         <!-- List the annotated entity class/es -->
         <mapping class="edu.matc.personalfinance.entity.User"/>
+        <mapping class="edu.matc.personalfinance.entity.TransactionRecord"/>
 
     </session-factory>
 
