@@ -45,7 +45,7 @@ public class SignUp extends HttpServlet {
             try {
                 UserDao dao = new UserDao();
                 dao.addUserFromSignUp(firstName, lastName, email, username, password);
-                resp.sendRedirect("/success");
+                resp.sendRedirect("success");
                 logger.info(dao);
             } catch (Exception e) {
                 logger.error("Exception: " + e);

@@ -1,0 +1,4 @@
+edu/matc/personalfinance/entity/TransactionRecordTest.class
+edu/matc/personalfinance/entity/UserTest.class
+edu/matc/personalfinance/persistence/TransactionRecordDaoTest.class
+edu/matc/personalfinance/persistence/UserDaoTest.class

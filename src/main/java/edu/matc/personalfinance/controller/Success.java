@@ -33,7 +33,13 @@ public class Success extends HttpServlet {
         writer.println("" + "" + "<center>"
                 + "User Added Successfully" + "</center>" + ""
                 + "");
-        writer.println("<a href=\"/index.jsp\">Home</a>");
+
+        writer.println("<button onclick=\"goBack()\">Go Back</button>");
+        writer.print("<script>");
+        writer.print("function goBack() {");
+        writer.print("window.history.back()");
+        writer.print("}");
+        writer.print("</script>");
         writer.close();
     }
 }

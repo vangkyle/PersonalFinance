@@ -15,3 +15,5 @@
 | 2/12/17 | Added Maven, entities for remaining table and bootstrap | 1.25 | |
 | 2/12/17 | Set up AWS | 2 | Ran to some issues with different IP address but got it all figured out. Still need to deploy project to AWS. |
 | 2/13/17 | Deployed project to AWS | .25 | Successfully deployed web app but will redeploy when progress in project. |
+| 2/17/17 | Authentication exercise completed | 1 | Still incorporating to project. |
+| 2/20/17 | SignUp Servlet completed | 1 | Input data from form inserts to database but doesn't work for AWS, have to fix. |
