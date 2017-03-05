@@ -8,30 +8,55 @@
 <%@ include file="taglib.jsp"%>
 <c:set var="title" value="Login Page" />
 <%@include file="head.jsp"%>
+
+<!--
+<html>
+<head>
+</head>
+<body>
+<%-- TODO add form here for logging in --%>
+<div>
+    <FORM ACTION="j_security_check" METHOD="POST">
+        <div>
+            <label>User name: </label>
+            <INPUT TYPE="TEXT" NAME="j_username">
+        </div>
+        <div>
+            <label>Password: </label>
+            <INPUT TYPE="PASSWORD" NAME="j_password">
+            <INPUT TYPE="SUBMIT" VALUE="Log In">
+        </div>
+    </FORM>
+</div>
+</body>
+</html>
+-->
+
 <html>
     <body>
         <div class="container">
             <h2>Login</h2>
-            <form action="login" class="form-horizontal">
+            <FORM ACTION="j_security_check" class="form-horizontal" METHOD="post">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="signInUsername">Username: </label>
+                    <label class="control-label col-sm-2">Username: </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="signInUsername" placeholder="Username">
+                        <input type="text" class="form-control" name="j_username" placeholder="Username">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="signInPassword">Password: </label>
+                    <label class="control-label col-sm-2">Password: </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="signInPassword" placeholder="Password">
+                        <input type="password" class="form-control" name="j_password" id="signInPassword" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button" name="submit" value="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" name="submit" value="Log In" class="btn btn-primary">
                         <button type="reset" name="clear" value="reset" class="btn btn-primary" action="">Clear</button>
                     </div>
                 </div>
-            </form>
+            </FORM>
         </div>
 </body>
 </html>
+

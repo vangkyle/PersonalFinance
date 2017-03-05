@@ -114,7 +114,7 @@ public class UserDao {
         return id;
     }
 
-    public int addUserFromSignUp(String firstName, String lastName, String email, String userName, String password) {
+    public int addUserFromSignUp(String firstName, String lastName, String email, String userName, String userPass) {
         int id = 0;
         Session session = null;
         try {
@@ -125,11 +125,11 @@ public class UserDao {
             user.setLastName(lastName);
             user.setEmail(email);
             user.setUserName(userName);
-            user.setPassword(password);
+            user.setUserPass(userPass);
             id = (int) session.save(user);
             transaction.commit();
-            logger.info(transaction);
-            logger.info("Up to this works");
+            //logger.info(transaction);
+            //logger.info("Up to this works");
         } catch (HibernateException he) {
             logger.error("Hibernate Exception: " + he);
         } catch (Exception e) {

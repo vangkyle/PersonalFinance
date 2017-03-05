@@ -43,6 +43,7 @@ public class UserDaoTest {
         assertEquals("lastNameTest", "lastNameTest");
     }
 
+
     @Test
     public void add() throws Exception {
         user = new User("firstNameTest3", "lastNameTest3", "test@madisoncollege.edu2", "userNameTest2", "Test2");
@@ -55,13 +56,14 @@ public class UserDaoTest {
         assertEquals(user.getLastName(), insertedUser.getLastName());
         assertEquals(user.getEmail(), insertedUser.getEmail());
         assertEquals(user.getUserName(), insertedUser.getUserName());
-        assertEquals(user.getPassword(), insertedUser.getPassword());
+        assertEquals(user.getUserPass(), insertedUser.getUserPass());
     }
+
 
     @Test
     public void addUserFromSignUp() throws Exception {
         user = new User();
-        int id = dao.addUserFromSignUp(user.getFirstName(), user.getLastName(), user.getEmail(), user.getUserName(), user.getPassword());
+        int id = dao.addUserFromSignUp(user.getFirstName(), user.getLastName(), user.getEmail(), user.getUserName(), user.getUserPass());
 
         assertNotEquals(0, id);
 
@@ -70,7 +72,7 @@ public class UserDaoTest {
         assertEquals(user.getLastName(), insertedUser.getLastName());
         assertEquals(user.getEmail(), insertedUser.getEmail());
         assertEquals(user.getUserName(), insertedUser.getUserName());
-        assertEquals(user.getPassword(), insertedUser.getPassword());
+        assertEquals(user.getUserPass(), insertedUser.getUserPass());
     }
 
     @Test

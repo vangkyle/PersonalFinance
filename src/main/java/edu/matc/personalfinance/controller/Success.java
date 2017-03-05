@@ -1,7 +1,9 @@
 package edu.matc.personalfinance.controller;
 
+import edu.matc.personalfinance.persistence.UserDao;
 import org.apache.log4j.Logger;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +24,33 @@ public class Success extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        /*
+        String firstName = req.getParameter("signUpFirstName");
+        String lastName = req.getParameter("signUpLastName");
+        String email = req.getParameter("signUpEmail");
+        String username = req.getParameter("signUpUsername");
+        String password = req.getParameter("signUpPassword");
 
+        try {
+            UserDao dao = dao.getAllUsers();
+        } catch (Exception e) {
+            logger.error("Exception" + e);
+        }
+        */
+
+        UserDao dao = new UserDao();
+        logger.info(dao);
+        //dao.getAllUsers();
+        //logger.info(dao.getAllUsers());
+        req.setAttribute("users", dao.getAllUsers());
+        //logger.info(req);
+
+        String url = "/userOutputTest.jsp";
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher(url);
+        dispatcher.forward(req, resp);
+
+        /*
         resp.setContentType("text/html");
 
         PrintWriter writer = resp.getWriter();
@@ -41,5 +69,6 @@ public class Success extends HttpServlet {
         writer.print("}");
         writer.print("</script>");
         writer.close();
+        */
     }
 }

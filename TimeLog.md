@@ -17,3 +17,6 @@
 | 2/13/17 | Deployed project to AWS | .25 | Successfully deployed web app but will redeploy when progress in project. |
 | 2/17/17 | Authentication exercise completed | 1 | Still incorporating to project. |
 | 2/20/17 | SignUp Servlet completed | 1 | Input data from form inserts to database but doesn't work for AWS, have to fix. |
+| 2/22/17 | Add user log in authentication | 1 | Work on sign out for user |
+| 2/23/17 | User and transaction dao created | 1 | |
+| 2/28/17 | Created expense entry and dashboard | 1.5 | Still need to finish populated select option with jquery |

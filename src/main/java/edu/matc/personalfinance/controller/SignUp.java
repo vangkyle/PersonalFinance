@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by kvang on 2/20/17.
@@ -41,12 +42,11 @@ public class SignUp extends HttpServlet {
         String username = req.getParameter("signUpUsername");
         String password = req.getParameter("signUpPassword");
 
-        HttpSession session = req.getSession(true);
             try {
                 UserDao dao = new UserDao();
                 dao.addUserFromSignUp(firstName, lastName, email, username, password);
-                resp.sendRedirect("success");
-                logger.info(dao);
+                resp.sendRedirect("userOutputTest.jsp");
+                //logger.info(dao);
             } catch (Exception e) {
                 logger.error("Exception: " + e);
             }

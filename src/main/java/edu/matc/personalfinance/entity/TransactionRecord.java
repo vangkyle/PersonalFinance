@@ -27,24 +27,15 @@ public class TransactionRecord implements java.io.Serializable {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "category")
-    private String category;
-
-    @Column(name = "description")
-    private String description;
-
     @Column(name = "amount")
     private BigDecimal amount;
 
     public TransactionRecord() {
     }
 
-    public TransactionRecord(int transid, LocalDate date, String type, String category, String description, BigDecimal amount) {
-        this.transid = transid;
+    public TransactionRecord(LocalDate date, String type, BigDecimal amount) {
         this.date = date;
         this.type = type;
-        this.category = category;
-        this.description = description;
         this.amount = amount;
     }
 
@@ -72,22 +63,6 @@ public class TransactionRecord implements java.io.Serializable {
         this.type = type;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public BigDecimal getAmount() {
         return amount;
     }
@@ -102,8 +77,6 @@ public class TransactionRecord implements java.io.Serializable {
                 "transid=" + transid +
                 ", date=" + date +
                 ", type='" + type + '\'' +
-                ", category='" + category + '\'' +
-                ", description='" + description + '\'' +
                 ", amount=" + amount +
                 '}';
     }

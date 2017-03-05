@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav">
                 <%-- TODO fix links to servlet, just testing to make sure links work. --%>
                 <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="#">Page 1</a></li>
+                <li><a href="entries.jsp">Transaction Entry</a></li>
                 <li><a href="#">Page 2</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
