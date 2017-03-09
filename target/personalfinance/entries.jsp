@@ -9,13 +9,14 @@
 <c:set var="title" value="Transaction Entry" />
 <%@include file="head.jsp"%>
 
+<script type="text/javascript" class="init">
+    $(document).ready(function() {
+        $('input:radio[name=entryType]:checked').val();
+    });
+</script>
 
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script>
-
-        </script>
     </head>
     <body>
         <div class="container">
@@ -30,7 +31,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="entryType">Entry type: </label>
                     <div class="col-sm-10">
-                        <input type="radio" class="radio-inline" name="entryType" id="entryType" value="Expense"> Expense
+                        <input type="radio" class="radio-inline" name="entryType" id="entryType" value="Expense" checked> Expense
                         <input type="radio" class="radio-inline" name="entryType" id="entryType" value="Income"> Income
                     </div>
                 </div>
@@ -38,28 +39,7 @@
                     <label class="control-label col-sm-2" for="category">Category: </label>
                     <div class="col-sm-2">
                         <select class="form-control" name="category" id="category">
-                            <option value="Income">Income</option>
-                            <option value="Automobile">Automobile</option>
-                            <option value="Bank Charges">Bank Charges</option>
-                            <option value="Charity">Charity</option>
-                            <option value="Clothing">Clothing</option>
-                            <option value="Credit Card Fees">Credit Card Fees</option>
-                            <option value="Education">Education</option>
-                            <option value="Events">Events</option>
-                            <option value="Food">Food</option>
-                            <option value="Gifts">Gifts</option>
-                            <option value="Healthcare">Healthcare</option>
-                            <option value="Household">Household</option>
-                            <option value="Insurance">Insurance</option>
-                            <option value="Job expenses">Job expenses</option>
-                            <option value="Leisure">Leisure (daily / non-vacation)</option>
-                            <option value="Hobbies">Hobbies</option>
-                            <option value="Loans">Loans</option>
-                            <option value="Pet Care">Pet Care</option>
-                            <option value="Savings">Savings</option>
-                            <option value="Taxes">Taxes</option>
-                            <option value="Utilities">Utilities</option>
-                            <option value="Vacation">Vacation</option>
+                            <option></option>
                         </select>
                     </div>
                 </div>

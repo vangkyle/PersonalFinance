@@ -16,6 +16,10 @@ public class TransactionRecordDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
+    /**
+     *
+     * @return
+     */
     public List<TransactionRecord> getAllTransactionRecord() {
         List<TransactionRecord> transactionRecords = new ArrayList<TransactionRecord>();
         Session session = null;
@@ -35,13 +39,36 @@ public class TransactionRecordDao {
     }
 
     /**
+     *
+     * @param id
+     * @return
+     */
+    public TransactionRecord getTransaction(int id) {
+        TransactionRecord transactionRecord = null;
+        Session session = null;
+        try {
+            session = openSession();
+            transactionRecord = (TransactionRecord) session.get(TransactionRecord.class, id);
+        } catch (HibernateException he) {
+            logger.error("Hibernate Exception: " + he);
+        } catch (Exception e) {
+            logger.error("Exception: " + e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return transactionRecord;
+    }
+
+    /**
      * save or update transactionRecord
      *
      * @param transactionRecord
      * @return id of the transaction record
      */
 
-    public void addTransactionRecord(TransactionRecord transactionRecord) {
+    public int addTransactionRecord(TransactionRecord transactionRecord) {
         int id = 0;
         Session session = null;
         try {
@@ -55,8 +82,14 @@ public class TransactionRecordDao {
             logger.error("Exception: " + e);
         }
 
+        return id;
     }
 
+
+    /**
+     *
+     * @return
+     */
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }

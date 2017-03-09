@@ -1,5 +1,6 @@
 package edu.matc.personalfinance.persistence;
 
+import edu.matc.personalfinance.entity.TransactionRecord;
 import edu.matc.personalfinance.entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -143,8 +144,7 @@ public class UserDao {
     }
 
 
-    public void deleteUser(int id) {
-        User user = null;
+    public void deleteUser(User user) {
         Session session = null;
         try {
             session = openSession();

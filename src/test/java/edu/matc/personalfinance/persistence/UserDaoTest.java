@@ -77,8 +77,8 @@ public class UserDaoTest {
 
     @Test
     public void deleteUser() throws Exception {
-        User user = new User();
-        assertEquals(user.getUserid(), 0);
+        user = dao.getUser(4);
+        dao.deleteUser(user);
 
     }
 

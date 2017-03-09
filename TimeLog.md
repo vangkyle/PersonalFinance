@@ -20,3 +20,4 @@
 | 2/22/17 | Add user log in authentication | 1 | Work on sign out for user |
 | 2/23/17 | User and transaction dao created | 1 | |
 | 2/28/17 | Created expense entry and dashboard | 1.5 | Still need to finish populated select option with jquery |
+| 3/7/17 | 
