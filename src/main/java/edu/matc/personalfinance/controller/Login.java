@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
-    /*
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
@@ -51,5 +51,5 @@ public class Login extends HttpServlet {
         }
         out.close();
     }
-    */
+
 }

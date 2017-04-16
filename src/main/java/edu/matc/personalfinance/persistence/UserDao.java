@@ -1,6 +1,5 @@
 package edu.matc.personalfinance.persistence;
 
-import edu.matc.personalfinance.entity.TransactionRecord;
 import edu.matc.personalfinance.entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -25,7 +24,7 @@ public class UserDao {
      * @return All users
      */
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
+        List<User> users = null;
         Session session = null;
         try {
             session = openSession();
@@ -95,7 +94,7 @@ public class UserDao {
      * @return id of the inserted user
      */
 
-    public int add(User user) {
+    public int addUser(User user) {
         int id = 0;
         Session session = null;
         try {
@@ -129,8 +128,8 @@ public class UserDao {
             user.setUserPass(userPass);
             id = (int) session.save(user);
             transaction.commit();
-            //logger.info(transaction);
-            //logger.info("Up to this works");
+            logger.info(transaction);
+            logger.info("Up to this works");
         } catch (HibernateException he) {
             logger.error("Hibernate Exception: " + he);
         } catch (Exception e) {
@@ -144,11 +143,12 @@ public class UserDao {
     }
 
 
-    public void deleteUser(User user) {
+    public void deleteUser(int id) {
         Session session = null;
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
+            User user = (User) session.get(User.class, id);
             session.delete(user);
             transaction.commit();
         } catch (HibernateException he) {

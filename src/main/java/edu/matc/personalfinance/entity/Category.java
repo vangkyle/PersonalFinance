@@ -1,117 +1,76 @@
 package edu.matc.personalfinance.entity;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import org.hibernate.annotations.GenericGenerator;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by kvang on 3/7/17.
  */
 @Entity
-@Table(name = "category", catalog ="financetracker")
-public class Category implements java.io.Serializable {
+@Table(name = "category")
+public class Category implements Serializable {
 
     private int category_id;
-    private String description;
-    private Set<TransactionRecord> transactionRecords = new HashSet<TransactionRecord>(0);
+    private String cat_description;
+    private TransactionRecord transactionRecord;
+    private Subcategory subcategory;
 
-    /**
-     * Instantiates a new Category.
-     */
     public Category() {
     }
 
-    /**
-     * Instantiates a new Category.
-     *
-     * @param category_id the category id
-     * @param description the description
-     */
-    public Category(int category_id, String description) {
+    public Category(int category_id, String cat_description) {
         this.category_id = category_id;
-        this.description = description;
+        this.cat_description = cat_description;
     }
 
-    /**
-     * Instantiates a new Category.
-     *
-     * @param category_id        the category id
-     * @param description        the description
-     * @param transactionRecords the transaction records
-     */
-    public Category(int category_id, String description, Set<TransactionRecord> transactionRecords) {
+    public Category(int category_id, String cat_description, TransactionRecord transactionRecord, Subcategory subcategory) {
         this.category_id = category_id;
-        this.description = description;
-        this.transactionRecords = transactionRecords;
+        this.cat_description = cat_description;
+        this.transactionRecord = transactionRecord;
+        this.subcategory = subcategory;
     }
 
-    /**
-     * Gets category id.
-     *
-     * @return the category id
-     */
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "category_id", unique = true, nullable = false)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column(name = "category_id")
     public int getCategory_id() {
         return category_id;
     }
 
-    /**
-     * Sets category id.
-     *
-     * @param category_id the category id
-     */
     public void setCategory_id(int category_id) {
         this.category_id = category_id;
     }
 
-    /**
-     * Gets description.
-     *
-     * @return the description
-     */
-    @Column(name = "description")
-    public String getDescription() {
-        return description;
+    @Column(name = "cat_description")
+    public String getCat_description() {
+        return cat_description;
     }
 
-    /**
-     * Sets description.
-     *
-     * @param description the description
-     */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCat_description(String cat_description) {
+        this.cat_description = cat_description;
     }
 
-    /**
-     * Gets transaction records.
-     *
-     * @return the transaction records
-     */
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.category", cascade = CascadeType.ALL)
-    public Set<TransactionRecord> getTransactionRecords() {
-        return transactionRecords;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trans_id")
+    public TransactionRecord getTransactionRecord() {
+        return transactionRecord;
     }
 
-    /**
-     * Sets transaction records.
-     *
-     * @param transactionRecords the transaction records
-     */
-    public void setTransactionRecords(Set<TransactionRecord> transactionRecords) {
-        this.transactionRecords = transactionRecords;
+    public void setTransactionRecord(TransactionRecord transactionRecord) {
+        this.transactionRecord = transactionRecord;
     }
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "category_id=" + category_id +
-                ", description='" + description + '\'' +
-                ", transactionRecords=" + transactionRecords +
-                '}';
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "subcategory_id")
+    public Subcategory getSubcategory() {
+        return subcategory;
     }
+
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
+    }
+
 }

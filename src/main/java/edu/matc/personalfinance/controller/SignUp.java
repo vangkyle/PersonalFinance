@@ -1,6 +1,5 @@
 package edu.matc.personalfinance.controller;
 
-import edu.matc.personalfinance.entity.User;
 import edu.matc.personalfinance.persistence.UserDao;
 import org.apache.log4j.Logger;
 
@@ -10,9 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by kvang on 2/20/17.
@@ -45,8 +42,8 @@ public class SignUp extends HttpServlet {
             try {
                 UserDao dao = new UserDao();
                 dao.addUserFromSignUp(firstName, lastName, email, username, password);
+                logger.debug(dao.addUserFromSignUp(firstName, lastName, email, username, password));
                 resp.sendRedirect("userOutputTest.jsp");
-                //logger.info(dao);
             } catch (Exception e) {
                 logger.error("Exception: " + e);
             }

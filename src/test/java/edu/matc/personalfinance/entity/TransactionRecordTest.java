@@ -1,4 +1,4 @@
-package edu.matc.personalfinance.entity;
+/*package edu.matc.personalfinance.entity;
 
 import org.junit.Before;
 
@@ -7,11 +7,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.*;
-
+*/
 /**
  * Created by kvang on 2/20/17.
  */
-public class TransactionRecordTest {
+/*public class TransactionRecordTest {
 
     TransactionRecord transactionRecord;
 
@@ -27,3 +27,4 @@ public class TransactionRecordTest {
     }
 
 }
+*/

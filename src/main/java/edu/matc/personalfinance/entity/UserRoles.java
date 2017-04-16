@@ -1,53 +1,64 @@
 package edu.matc.personalfinance.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import org.apache.log4j.Logger;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+import javax.persistence.*;
 
 /**
  * Created by kvang on 3/7/17.
  */
 @Entity
-@Table(name = "user_roles", catalog = "financetracker", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "user_name")
-})
+@Table(name = "user_roles")
 public class UserRoles {
 
-    private String user_name;
-    private String role_name;
+    private final Logger logger = Logger.getLogger(this.getClass());
+    private int userid;
+    private String userName;
+    private String roleName;
+    private User user;
 
-    public UserRoles() {
+
+    @Id
+    @GeneratedValue(generator = "newGenerator") // name of the primary key generator
+    @GenericGenerator(name = "newGenerator", strategy = "foreign", parameters = {@Parameter(value = "user", name = "property")})
+    public int getUserid() {
+        return userid;
     }
 
-    public UserRoles(String user_name, String role_name) {
-        this.user_name = user_name;
-        this.role_name = role_name;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
-    @Column(name = "user_name", unique = true, nullable = false)
-    public String getUser_name() {
-        return user_name;
+    @GeneratedValue(generator = "newGenerator2") // name of the primary key generator
+    @GenericGenerator(name = "newGenerator2", strategy = "foreign", parameters = {@Parameter(value = "user", name = "property")})
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    @Column(name = "role_name", nullable = false)
-    public String getRole_name() {
-        return role_name;
+    @Column(name = "role_name")
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRole_name(String role_name) {
-        this.role_name = role_name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    @Override
-    public String toString() {
-        return "UserRoles{" +
-                "user_name='" + user_name + '\'' +
-                ", role_name='" + role_name + '\'' +
-                '}';
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    public User getUser() {
+        return user;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
 }

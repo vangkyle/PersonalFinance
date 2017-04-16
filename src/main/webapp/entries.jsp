@@ -8,7 +8,7 @@
 <%@ include file="taglib.jsp"%>
 <c:set var="title" value="Transaction Entry" />
 <%@include file="head.jsp"%>
-
+<!--
 <script type="text/javascript" class="init">
     $(document).ready( function () {
         $("input[name$='entryType']").click(function() {
@@ -18,6 +18,7 @@
         })
     } );
 </script>
+-->
 
 
 <html>

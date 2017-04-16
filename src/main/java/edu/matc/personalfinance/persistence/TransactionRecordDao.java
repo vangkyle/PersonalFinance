@@ -16,10 +16,6 @@ public class TransactionRecordDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    /**
-     *
-     * @return
-     */
     public List<TransactionRecord> getAllTransactionRecord() {
         List<TransactionRecord> transactionRecords = new ArrayList<TransactionRecord>();
         Session session = null;
@@ -38,11 +34,7 @@ public class TransactionRecordDao {
         return transactionRecords;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
+
     public TransactionRecord getTransaction(int id) {
         TransactionRecord transactionRecord = null;
         Session session = null;
@@ -61,12 +53,6 @@ public class TransactionRecordDao {
         return transactionRecord;
     }
 
-    /**
-     * save or update transactionRecord
-     *
-     * @param transactionRecord
-     * @return id of the transaction record
-     */
 
     public int addTransactionRecord(TransactionRecord transactionRecord) {
         int id = 0;
@@ -86,10 +72,6 @@ public class TransactionRecordDao {
     }
 
 
-    /**
-     *
-     * @return
-     */
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }

@@ -13,6 +13,6 @@
 <head>
 </head>
     Invalid userid/password combination. <br />
-    <a href="signIn.jsp">Try again</a><body>
+    <a href="/login">Try again</a><body>
 </body>
 </html>

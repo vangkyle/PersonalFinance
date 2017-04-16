@@ -23,6 +23,8 @@
         <!-- List the annotated entity class/es -->
         <mapping class="edu.matc.personalfinance.entity.User"/>
         <mapping class="edu.matc.personalfinance.entity.TransactionRecord"/>
+        <mapping class="edu.matc.personalfinance.entity.Category"/>
+        <mapping class="edu.matc.personalfinance.entity.Subcategory"/>
 
     </session-factory>
 

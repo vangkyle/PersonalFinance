@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ include file="taglib.jsp"%>
-<c:set var="title" value="Login Page" />
+<c:set var="title" value="Sign Up Page" />
 <%@include file="head.jsp"%>
 
 <html>
