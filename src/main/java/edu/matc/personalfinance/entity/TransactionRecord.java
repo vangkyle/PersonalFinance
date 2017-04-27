@@ -26,25 +26,6 @@ public class TransactionRecord implements Serializable {
     public TransactionRecord() {
     }
 
-
-    public TransactionRecord(int transid, LocalDate date, String type, BigDecimal amount) {
-        this.transid = transid;
-        this.date = date;
-        this.type = type;
-        this.amount = amount;
-    }
-
-
-    public TransactionRecord(int transid, LocalDate date, String type, BigDecimal amount, User user, Category category, Subcategory subcategory) {
-        this.transid = transid;
-        this.date = date;
-        this.type = type;
-        this.amount = amount;
-        this.user = user;
-        this.category = category;
-        this.subcategory = subcategory;
-    }
-
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
@@ -85,8 +66,8 @@ public class TransactionRecord implements Serializable {
         this.amount = amount;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user")
     public User getUser() {
         return user;
     }
@@ -95,8 +76,8 @@ public class TransactionRecord implements Serializable {
         this.user = user;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "category")
     public Category getCategory() {
         return category;
     }
@@ -105,8 +86,8 @@ public class TransactionRecord implements Serializable {
         this.category = category;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "subcategory_id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "subcategory")
     public Subcategory getSubcategory() {
         return subcategory;
     }
@@ -114,6 +95,4 @@ public class TransactionRecord implements Serializable {
     public void setSubcategory(Subcategory subcategory) {
         this.subcategory = subcategory;
     }
-
-
 }

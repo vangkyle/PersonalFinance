@@ -4,6 +4,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by kvang on 3/7/17.
@@ -14,23 +16,26 @@ public class Category implements Serializable {
 
     private int category_id;
     private String cat_description;
-    private TransactionRecord transactionRecord;
-    private Subcategory subcategory;
+    private Set<TransactionRecord> recordSet = new HashSet<TransactionRecord>(0);
+    private Set<Subcategory> subcategorySet = new HashSet<Subcategory>(0);
 
     public Category() {
     }
+
+    public Category(int category_id) {
+        this.category_id = category_id;
+    }
+
+    public Category(String cat_description) {
+        this.cat_description = cat_description;
+    }
+
 
     public Category(int category_id, String cat_description) {
         this.category_id = category_id;
         this.cat_description = cat_description;
     }
 
-    public Category(int category_id, String cat_description, TransactionRecord transactionRecord, Subcategory subcategory) {
-        this.category_id = category_id;
-        this.cat_description = cat_description;
-        this.transactionRecord = transactionRecord;
-        this.subcategory = subcategory;
-    }
 
     @Id
     @GeneratedValue(generator = "increment")
@@ -53,24 +58,21 @@ public class Category implements Serializable {
         this.cat_description = cat_description;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trans_id")
-    public TransactionRecord getTransactionRecord() {
-        return transactionRecord;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
+    public Set<TransactionRecord> getRecordSet() {
+        return recordSet;
     }
 
-    public void setTransactionRecord(TransactionRecord transactionRecord) {
-        this.transactionRecord = transactionRecord;
+    public void setRecordSet(Set<TransactionRecord> recordSet) {
+        this.recordSet = recordSet;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "subcategory_id")
-    public Subcategory getSubcategory() {
-        return subcategory;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category2", cascade = CascadeType.ALL)
+    public Set<Subcategory> getSubcategorySet() {
+        return subcategorySet;
     }
 
-    public void setSubcategory(Subcategory subcategory) {
-        this.subcategory = subcategory;
+    public void setSubcategorySet(Set<Subcategory> subcategorySet) {
+        this.subcategorySet = subcategorySet;
     }
-
 }

@@ -9,7 +9,7 @@
 <c:set var="title" value="User Output" />
 <%@include file="head.jsp"%>
 
-<script>
+<script type="text/javascript" class="init">
     $(document).ready(function(){
         $('#userResults').DataTable();
     });
@@ -18,7 +18,7 @@
 <html>
     <body>
     <div>
-        <h2>Users results: </h2>
+        <h2><Strong>Users results: </Strong></h2>
         <table id="userResults" class="display" cellspacing="0" width="100%">
                 <thead>
                 <th>User ID</th>

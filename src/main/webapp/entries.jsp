@@ -6,28 +6,34 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ include file="taglib.jsp"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <c:set var="title" value="Transaction Entry" />
 <%@include file="head.jsp"%>
-<!--
-<script type="text/javascript" class="init">
-    $(document).ready( function () {
-        $("input[name$='entryType']").click(function() {
-            var test = $(this).val();
-
-            $("div")
-        })
-    } );
-</script>
--->
-
 
 <html>
     <head>
+        <script>
+            $(document).ready(function() {
+                $('#expenseCat').change(function(event) {
+                    var expenses = $("select #expenseCat").val();
+                    $.get('CategoryListJson', {
+                            categoryName : expenses
+                    }, function(response) {
+                        var select = $('#expenseSubcat');
+                        select.find('option').remove();
+                            $.each(response, function(index, value) {
+                                console.log($('<option>').val(value).text(value).appendTo(select));
+                            });
+                    });
+                });
+
+            });
+        </script>
     </head>
     <body>
         <div class="container">
             <h2>Transaction Entry</h2>
-            <form action="entry" class="form-horizontal">
+            <form action="categoryListJson" class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="date">Date: </label>
                     <div class="col-sm-10">
@@ -53,7 +59,37 @@
                     <label class="control-label col-sm-2" for="expenseCat">Category: </label>
                     <div class="col-sm-2">
                         <select class="form-control" name="expenseCat" id="expenseCat">
-                            <option></option>
+                            <option>Select Category</option>
+                            <option value="Automobile">Automobile</option>
+                            <option value="Bank Charges">Bank Charges</option>
+                            <option value="Charity">Charity</option>
+                            <option value="Childcare">Childcare</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Credit Card Fees">Credit Card Fees</option>
+                            <option value="Education">Education</option>
+                            <option value="Events">Events</option>
+                            <option value="Food">Food</option>
+                            <option value="Gifts">Gifts</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Household">Household</option>
+                            <option value="Insurance">Insurance</option>
+                            <option value="Job Expenses">Job Expenses</option>
+                            <option value="Leisure (daily/non-vacation)">Leisure (daily/non-vacation)</option>
+                            <option value="Hobbies">Hobbies</option>
+                            <option value="Loans">Loans</option>
+                            <option value="Pet Care">Pet Care</option>
+                            <option value="Savings">Savings</option>
+                            <option value="Taxes">Taxes</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Vacation">Vacation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" name="expenseSubcat">
+                    <label class="control-label col-sm-2" for="expenseSubcat">Subcategories: </label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="expenseSubcat" id="expenseSubcat">
+                            <option>Select Subcategory</option>
                         </select>
                     </div>
                 </div>

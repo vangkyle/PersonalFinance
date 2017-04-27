@@ -3,17 +3,12 @@ package edu.matc.personalfinance.entity;
 import org.junit.Before;
 
 /**
- * Created by kvang on 2/20/17.
+ * Created by kvang on 4/26/17.
  */
-public class TransactionRecordTest {
-
-    TransactionRecord transactionRecord;
-
+public class SubcategoryTest {
     @Before
     public void setUp() throws Exception {
 
     }
-
-
 
 }

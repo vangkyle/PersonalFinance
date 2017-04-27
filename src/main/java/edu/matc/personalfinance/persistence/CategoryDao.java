@@ -1,6 +1,6 @@
 package edu.matc.personalfinance.persistence;
 
-import edu.matc.personalfinance.entity.TransactionRecord;
+import edu.matc.personalfinance.entity.Category;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,92 +9,92 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 /**
- * Created by kvang on 2/20/17.
+ * Created by kvang on 4/26/17.
  */
-public class TransactionRecordDao {
+public class CategoryDao {
 
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    public List<TransactionRecord> getAllTransactionRecord() {
-        List<TransactionRecord> transactionRecords = null;
+    public List<Category> getAllCategory() {
+        List<Category> categories = null;
         Session session = null;
+
         try {
             session = openSession();
-            transactionRecords = session.createCriteria(TransactionRecord.class).list();
+            categories = session.createCriteria(Category.class).list();
         } catch (HibernateException he) {
-            logger.error("Hibernate Exception in getAllTransactionRecord(): " + he);
+            logger.error("Hibernate Exception in getAllCategory(): " + he);
         } catch (Exception e) {
-            logger.error("Exception in getAllTransactionRecord(): " + e);
+            logger.error("Exception in getAllCategory(): " + e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-        return transactionRecords;
+        return categories;
     }
 
-
-    public TransactionRecord getTransactionById(int id) {
-        TransactionRecord transactionRecord = null;
+    public Category getCategory(int id) {
+        Category category = null;
         Session session = null;
+
         try {
             session = openSession();
-            transactionRecord = (TransactionRecord) session.get(TransactionRecord.class, id);
+            category = (Category) session.get(Category.class, id);
         } catch (HibernateException he) {
-            logger.error("Hibernate Exception in getTransactionById(): " + he);
+            logger.error("Hibernate Exception in getCategory(): " + he);
         } catch (Exception e) {
-            logger.error("Exception in getTransactionById(): " + e);
+            logger.error("Exception in getCategory(): " + e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-        return transactionRecord;
+        return category;
     }
 
 
-    public int addTransactionRecord(TransactionRecord transactionRecord) {
+    public int addCategory(Category category) {
         int id = 0;
         Session session = null;
+
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
-            id = (int) session.save(transactionRecord);
+            id = (int) session.save(category);
             transaction.commit();
         } catch (HibernateException he) {
-            logger.error("Hibernate Exception in addTransactionRecord(): " + he);
+            logger.error("Hibernate Exception in addCategory(): " + he);
         } catch (Exception e) {
-            logger.error("Exception in addTransactionRecord(): " + e);
+            logger.error("Exception in addCategory(): " + e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-
-        logger.info("returned id: " + id);
         return id;
-
     }
 
-    public void deleteTransactionRecord(int id) {
+    public void deleteCategory(int id) {
         Session session = null;
 
         try {
             session = openSession();
             Transaction transaction = session.beginTransaction();
-            TransactionRecord transactionRecord = (TransactionRecord) session.get(TransactionRecord.class, id);
-            session.delete(transactionRecord);
+            Category category = (Category) session.get(Category.class, id);
+            session.delete(category);
             transaction.commit();
         } catch (HibernateException he) {
-            logger.error("Hibernate Exception in deleteTransactionRecord(): " + he);
+            logger.error("Hibernate Exception in deleteCategory(): " + he);
         } catch (Exception e) {
-            logger.error("Exception in deleteTransactionRecord(): " + e);
+            logger.error("Exception in deleteCategory(): " + e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
     }
+
 
 
     private Session openSession() {

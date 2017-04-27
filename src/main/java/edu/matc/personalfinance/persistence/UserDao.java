@@ -162,6 +162,28 @@ public class UserDao {
         }
     }
 
+    /*public void getTransaction(int id) {
+        Session session = null;
+        try {
+            session = openSession();
+            User user = (User) session.load(User.class, id);
+            TransactionRecord transactionRecord = (TransactionRecord) session.load(TransactionRecord.class, id);
+
+            for (TransactionRecord transRecords : user.getRecords()) {
+                logger.info("Transaction records: " + transRecords.getClass());
+            }
+        } catch (HibernateException he) {
+            logger.error("Exception: " + he);
+        } catch (Exception e) {
+            logger.error("Exception: " + e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+    }*/
+
 
     private Session openSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();

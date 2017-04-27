@@ -21,12 +21,25 @@ public class User implements Serializable {
     private String email;
     private String userName;
     private String userPass;
-    private Set<TransactionRecord> records = new HashSet<TransactionRecord>(0);
+    private Set<TransactionRecord> records = new HashSet<TransactionRecord>();
 
     /**
      * Instantiates a new User.
      */
     public User() {
+    }
+
+    public User(int userid) {
+        this.userid = userid;
+    }
+
+    public User(int userid, String firstName, String lastName, String email, String userName, String userPass) {
+        this.userid = userid;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.userName = userName;
+        this.userPass = userPass;
     }
 
     /**
@@ -113,7 +126,8 @@ public class User implements Serializable {
         this.userPass = userPass;
     }
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user")
     public Set<TransactionRecord> getRecords() {
         return records;
     }
