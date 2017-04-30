@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*" %>
 <%--
   Created by IntelliJ IDEA.
   User: kvang
@@ -12,6 +13,7 @@
 
 <html>
     <head>
+        <!--
         <script>
             $(document).ready(function() {
                 $('#expenseCat').change(function(event) {
@@ -29,68 +31,90 @@
 
             });
         </script>
+        -->
     </head>
     <body>
+        <!-- Database credentials -->
+        <%! String driverName = "com.mysql.jdbc.Driver";%>
+        <%! String url = "jdbc:mysql://localhost:3306/financetracker";%>
+        <%! String user = "root";%>
+        <%! String psw = "frances88";%>
+        
         <div class="container">
             <h2>Transaction Entry</h2>
             <form action="categoryListJson" class="form-horizontal">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="date">Date: </label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-4">
                         <input type="date" class="form-control" name="date" id="date">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="entryType">Entry type: </label>
-                    <div class="col-sm-10">
-                        <input type="radio" class="radio-inline" name="entryType" id="entryType" value="Expense" checked> Expense
-                        <input type="radio" class="radio-inline" name="entryType" id="entryType" value="Income"> Income
-                    </div>
-                </div>
-                <div class="form-group" name="incomeCat">
-                    <label class="control-label col-sm-2" for="incomeCat">Category: </label>
-                    <div class="col-sm-2">
-                        <select class="form-control" name="incomeCat" id="incomeCat">
-                            <option></option>
-                        </select>
+                <div class="form-group" name="amount">
+                    <label class="control-label col-sm-2" for="amount">Category: </label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="amount" placeholder="0.00"/>
                     </div>
                 </div>
                 <div class="form-group" name="expenseCat">
-                    <label class="control-label col-sm-2" for="expenseCat">Category: </label>
-                    <div class="col-sm-2">
-                        <select class="form-control" name="expenseCat" id="expenseCat">
-                            <option>Select Category</option>
-                            <option value="Automobile">Automobile</option>
-                            <option value="Bank Charges">Bank Charges</option>
-                            <option value="Charity">Charity</option>
-                            <option value="Childcare">Childcare</option>
-                            <option value="Clothing">Clothing</option>
-                            <option value="Credit Card Fees">Credit Card Fees</option>
-                            <option value="Education">Education</option>
-                            <option value="Events">Events</option>
-                            <option value="Food">Food</option>
-                            <option value="Gifts">Gifts</option>
-                            <option value="Healthcare">Healthcare</option>
-                            <option value="Household">Household</option>
-                            <option value="Insurance">Insurance</option>
-                            <option value="Job Expenses">Job Expenses</option>
-                            <option value="Leisure (daily/non-vacation)">Leisure (daily/non-vacation)</option>
-                            <option value="Hobbies">Hobbies</option>
-                            <option value="Loans">Loans</option>
-                            <option value="Pet Care">Pet Care</option>
-                            <option value="Savings">Savings</option>
-                            <option value="Taxes">Taxes</option>
-                            <option value="Utilities">Utilities</option>
-                            <option value="Vacation">Vacation</option>
-                        </select>
+                    <%
+                        Connection con = null;
+                        PreparedStatement ps = null;
+                        
+                        try {
+                            Class.forName(driverName);
+                            con = DriverManager.getConnection(url,user,psw);
+                            String sql = "SELECT cat_description FROM category";
+                            ps = con.prepareStatement(sql);
+                            ResultSet rs = ps.executeQuery();
+                    %>
+                            <label class="control-label col-sm-2" for="expenseCat">Category: </label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="expenseCat" id="expenseCat">
+                                    <option value="Select Category">Select Category</option>
+                            <%
+                                while(rs.next()) {
+                                    String cat_desc = rs.getString("cat_description");
+                            %>
+                                    <option value="<%=cat_desc %>"><%=cat_desc %></option>
+                            <%
+                                }
+                            %>
+                                </select>
+                            <%
+                                } catch (SQLException sqle) {
+                                    out.println(sqle);
+                                }
+                            %>
                     </div>
                 </div>
                 <div class="form-group" name="expenseSubcat">
-                    <label class="control-label col-sm-2" for="expenseSubcat">Subcategories: </label>
-                    <div class="col-sm-2">
-                        <select class="form-control" name="expenseSubcat" id="expenseSubcat">
-                            <option>Select Subcategory</option>
-                        </select>
+                    <%
+                        try {
+                            Class.forName(driverName);
+                            con = DriverManager.getConnection(url,user,psw);
+                            String sql2 = "SELECT subcat_description FROM subcategory JOIN category ON subcategory.category = category.category_id;";
+                            ps = con.prepareStatement(sql2);
+                            ResultSet rs = ps.executeQuery();
+                    %>
+                            <label class="control-label col-sm-2" for="expenseSubcat">Subcategories: </label>
+                            <div class="col-sm-4">
+                                <select class="form-control" name="expenseSubcat" id="expenseSubcat">
+                                    <option>Select Subcategory</option>
+                    <%
+                            while (rs.next()) {
+                                String subcat_desc = rs.getString("subcat_description");
+
+                    %>
+                                    <option value="<%=subcat_desc %>"><%=subcat_desc %></option>
+                    <%
+                            }
+                    %>
+                            </select>
+                    <%
+                        } catch (SQLException sqle) {
+                            out.println(sqle);
+                        }
+                    %>
                     </div>
                 </div>
                 <div class="form-group">

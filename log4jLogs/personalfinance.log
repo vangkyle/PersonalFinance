@@ -6023,3 +6023,491 @@ HHH000399: Using default transaction strategy (direct JDBC transactions)
 HHH000397: Using ASTQueryTranslatorFactory
 org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction@12be7494
 Up to this works
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+Exception in deleteTransactionRecord(): java.lang.IllegalArgumentException: attempt to create delete event with null entity
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+HHH000327: Error performing load command : org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.matc.personalfinance.entity.Category#49]
+Hibernate Exception in getAllSubcategory: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.matc.personalfinance.entity.Category#49]
+HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@4a891c97<rs=com.mysql.jdbc.JDBC42ResultSet@3fb6cf60>
+HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [182] entries
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/financetracker]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+HHH000327: Error performing load command : org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.matc.personalfinance.entity.Category#58]
+Hibernate Exception in getAllSubcategory: org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [edu.matc.personalfinance.entity.Category#58]
+HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@7eb01b12<rs=com.mysql.jdbc.JDBC42ResultSet@362a019c>
+HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [188] entries
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 1
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 2
+Exception in deleteTransactionRecord(): java.lang.IllegalArgumentException: attempt to create delete event with null entity
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 3
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+Hibernate Exception in addSubcategory(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+SQL Error: 1048, SQLState: 23000
+Column 'category' cannot be null
+HHH000010: On release of batch it still contained JDBC statements
+SQL Warning Code: 1265, SQLState: 01000
+Data truncated for column 'amount' at row 1
+SQL Warning Code: 1048, SQLState: 23000
+Column 'category' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'subcategory' cannot be null
+SQL Warning Code: 1048, SQLState: 23000
+Column 'user' cannot be null
+Hibernate Exception in addTransactionRecord(): org.hibernate.exception.ConstraintViolationException: could not execute statement
+returned id: 4
+user is: edu.matc.personalfinance.entity.User@610db97e
+role return is: edu.matc.personalfinance.entity.UserRoles@e044b4a

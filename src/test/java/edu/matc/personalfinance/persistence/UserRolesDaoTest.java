@@ -25,8 +25,8 @@ public class UserRolesDaoTest {
         URDao = new UserRolesDao();
         role = new UserRoles();
 
-        role.setRole_name("Role Name test");
-        role.setUser_name("User name test");
+        role.setRole_name("Administrator");
+        role.setUser_name("kvang5");
     }
 
     @Test

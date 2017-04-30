@@ -31,12 +31,8 @@ public class TransactionRecordDaoTest {
     UserDao dao;
     User user;
 
-    int newUser = 0;
-    String newFirst = "Frances";
-    String newLast = "Lo";
-    String newEmail = "flo@mail.com";
-    String newUserName = "flo";
-    String newUserPass = "flo1";
+    int newUser1 = 0;
+
 
     // Category
 
@@ -44,28 +40,40 @@ public class TransactionRecordDaoTest {
     Category category;
 
     int newCat3 = 0;
-    String newCatDesc = "Hello";
 
     // Subcategory
     SubcategoryDao subcategoryDao;
     Subcategory subcategory;
 
     int newSubcat3 = 0;
-    String newSubcatDesc = "World";
 
 
     @Before
     public void setUp() throws Exception {
         trd = new TransactionRecordDao();
         tr = new TransactionRecord();
-
         tr.setDate(getLocalDate("30-02-2017"));
         tr.setType("expense");
         tr.setAmount(new BigDecimal(12.99));
-        //tr.setUser();
-        tr.setCategory(category);
-        tr.setSubcategory(subcategory);
 
+        dao = new UserDao();
+        user = new User();
+        user.setFirstName("Tom");
+        user.setLastName("Johnson");
+        user.setEmail("tj@mail.com");
+        user.setUserName("TomJ");
+        user.setUserPass("JohnsonTom");
+        newUser1 = dao.addUser(user);
+
+        categoryDao = new CategoryDao();
+        category = new Category();
+        category.setCat_description("Family");
+        newCat3 = categoryDao.addCategory(category);
+
+        subcategoryDao = new SubcategoryDao();
+        subcategory = new Subcategory();
+        subcategory.setSubcat_description("Dinner");
+        newSubcat3 = subcategoryDao.addSubcategory(subcategory);
 
 
     }
@@ -81,11 +89,16 @@ public class TransactionRecordDaoTest {
     public void getTransactionById() throws Exception {
         newTransactionId = trd.addTransactionRecord(tr);
 
+        logger.info("category value is: " + tr.getCategory().getCat_description());
+
         assertNotNull("no transaction returned", trd.getTransactionById(newTransactionId));
         assertEquals("trans_id not return correctly", tr.getTransid(), trd.getTransactionById(newTransactionId).getTransid());
         assertEquals("date not returned correctly", tr.getDate(), trd.getTransactionById(newTransactionId).getDate());
         assertEquals("type not return correctly", tr.getType(), trd.getTransactionById(newTransactionId).getType());
         assertEquals("amount not return correctly", tr.getAmount(), trd.getTransactionById(newTransactionId).getAmount());
+        //assertEquals("user not returned correctly", tr.getUser().getUserid(), trd.getTransactionById(newTransactionId).getUser().getUserid());
+        assertEquals("category not returned correctly", tr.getCategory().getCat_description(), trd.getTransactionById(newTransactionId).getCategory().getCat_description());
+        assertEquals("subcategory not returned correctly", tr.getSubcategory().getSubcat_description(), trd.getTransactionById(newTransactionId).getSubcategory().getSubcat_description());
 
     }
 
@@ -93,12 +106,7 @@ public class TransactionRecordDaoTest {
     @Test
     public void addTransactionRecord() throws Exception {
         newTransactionId = trd.addTransactionRecord(tr);
-        assertNull(tr.getCategory());
-        assertNotEquals("no transaction added", 0, newTransactionId);
-        assertEquals("trans id not returned correctly", tr.getTransid(), trd.getTransactionById(newTransactionId).getTransid());
-        assertEquals("date not returned correctly", tr.getDate(), trd.getTransactionById(newTransactionId).getDate());
-        assertEquals("type not return correctly", tr.getType(), trd.getTransactionById(newTransactionId).getType());
-        assertEquals("amount not return correctly", tr.getAmount(), trd.getTransactionById(newTransactionId).getAmount());
+        assertNotEquals("no transaction added", 0, trd.getTransactionById(newTransactionId));
     }
 
     @Test
