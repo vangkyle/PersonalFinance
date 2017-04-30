@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="form-group" name="amount">
-                    <label class="control-label col-sm-2" for="amount">Amount: </label>
+                    <label class="control-label col-sm-2" for="amount">Category: </label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" id="amount" placeholder="0.00"/>
                     </div>
