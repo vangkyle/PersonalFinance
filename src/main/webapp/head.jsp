@@ -7,6 +7,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>${title}</title>
 
+    <!-- Google Sign-In -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="871857510834-60cu5hsh1u6qa68gj9749di5mvklarbu.apps.googleusercontent.com">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -34,8 +38,7 @@
             <ul class="nav navbar-nav">
                 <%-- TODO fix links to servlet, just testing to make sure links work. --%>
                 <li class="active"><a href="index.jsp">Home</a></li>
-                <li><a href="entries.jsp">Transaction Entry</a></li>
-                <li><a href="#">Page 2</a></li>
+                <li><a href="expenseEntry">Transaction Entry</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <%-- TODO fix links to servlet, just testing to make sure links work. --%>

@@ -29,28 +29,6 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(int userid) {
-        this.userid = userid;
-    }
-
-    public User(int userid, String firstName, String lastName, String email, String userName, String userPass) {
-        this.userid = userid;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.userName = userName;
-        this.userPass = userPass;
-    }
-
-    /**
-     * Instantiates a new User.
-     *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param email     the email
-     * @param userName  the user name
-     * @param userPass  the user pass
-     */
     public User(String firstName, String lastName, String email, String userName, String userPass) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -59,8 +37,7 @@ public class User implements Serializable {
         this.userPass = userPass;
     }
 
-    public User(int userid, String firstName, String lastName, String email, String userName, String userPass, Set<TransactionRecord> records) {
-        this.userid = userid;
+    public User(String firstName, String lastName, String email, String userName, String userPass, Set<TransactionRecord> records) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -126,7 +103,7 @@ public class User implements Serializable {
         this.userPass = userPass;
     }
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "user")
     public Set<TransactionRecord> getRecords() {
         return records;

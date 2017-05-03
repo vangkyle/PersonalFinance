@@ -17,6 +17,7 @@ import java.io.PrintWriter;
  */
 
 @WebServlet(
+        name = "Login",
         urlPatterns = {"/login"}
 )
 public class Login extends HttpServlet {

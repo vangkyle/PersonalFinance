@@ -16,6 +16,7 @@ import java.io.IOException;
  */
 
 @WebServlet (
+        name = "Signup",
         urlPatterns = {"/signup"}
 )
 public class SignUp extends HttpServlet {
@@ -41,9 +42,9 @@ public class SignUp extends HttpServlet {
 
             try {
                 UserDao dao = new UserDao();
-                //dao.addUserFromSignUp(firstName, lastName, email, username, password);
+                dao.addUserFromSignUp(firstName, lastName, email, username, password);
                 logger.info("The dao is working?" + dao);
-                logger.debug(dao.addUserFromSignUp(firstName, lastName, email, username, password));
+                //logger.debug(dao.addUserFromSignUp(firstName, lastName, email, username, password));
                 resp.sendRedirect("/success");
             } catch (Exception e) {
                 logger.error("Exception: " + e);

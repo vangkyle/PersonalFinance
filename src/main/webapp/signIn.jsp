@@ -9,30 +9,10 @@
 <c:set var="title" value="Login Page" />
 <%@include file="head.jsp"%>
 
-<!--
 <html>
-<head>
-</head>
-<body>
-<%-- TODO add form here for logging in --%>
-<div>
-    <FORM ACTION="j_security_check" METHOD="POST">
-        <div>
-            <label>User name: </label>
-            <INPUT TYPE="TEXT" NAME="j_username">
-        </div>
-        <div>
-            <label>Password: </label>
-            <INPUT TYPE="PASSWORD" NAME="j_password">
-            <INPUT TYPE="SUBMIT" VALUE="Log In">
-        </div>
-    </FORM>
-</div>
-</body>
-</html>
--->
-
-<html>
+    <head>
+        <script></script>
+    </head>
     <body>
         <div class="container">
             <h2>Login</h2>
@@ -56,7 +36,9 @@
                     </div>
                 </div>
             </FORM>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
 </body>
 </html>
+
 

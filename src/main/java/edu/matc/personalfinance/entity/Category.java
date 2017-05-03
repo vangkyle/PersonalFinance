@@ -17,19 +17,13 @@ public class Category implements Serializable {
     private int category_id;
     private String cat_description;
     private Set<TransactionRecord> recordSet = new HashSet<TransactionRecord>(0);
-    private Set<Subcategory> subcategorySet = new HashSet<Subcategory>(0);
 
     public Category() {
-    }
-
-    public Category(int category_id) {
-        this.category_id = category_id;
     }
 
     public Category(String cat_description) {
         this.cat_description = cat_description;
     }
-
 
     public Category(int category_id, String cat_description) {
         this.category_id = category_id;
@@ -58,7 +52,7 @@ public class Category implements Serializable {
         this.cat_description = cat_description;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category", cascade = CascadeType.ALL)
     public Set<TransactionRecord> getRecordSet() {
         return recordSet;
     }
@@ -67,12 +61,4 @@ public class Category implements Serializable {
         this.recordSet = recordSet;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category2", cascade = CascadeType.ALL)
-    public Set<Subcategory> getSubcategorySet() {
-        return subcategorySet;
-    }
-
-    public void setSubcategorySet(Set<Subcategory> subcategorySet) {
-        this.subcategorySet = subcategorySet;
-    }
 }

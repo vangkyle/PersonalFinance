@@ -15,7 +15,23 @@
 <body>
 <div class="row">
     <div class="col-md-4">?? AREA</div>
-    <div class="col-md-4">INCOME/EXPENSE REPORT</div>
+    <div class="col-md-4">
+        <h2><Strong>Users Transactions: </Strong></h2>
+        <table id="userTransactions" class="display" cellspacing="0" width="100%">
+            <thead>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Category</th>
+            </thead>
+            <tbody>
+            <c:forEach var="transaction" items="${transaction}">
+                <tr>
+                    <td>${transaction}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
     <div class="col-md-4">PIE CHART</div>
 </div>
 </body>

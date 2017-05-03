@@ -6,8 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,18 +96,29 @@ public class UserDaoTest {
         assertNull("user not deleted", dao.getUser(kyle.getUserid()));
     }
 
+    @Test
+    public void updateUser() throws Exception {
+        newUser = dao.addUser(kyle);
+        kyle.setFirstName("New");
+        kyle.setLastName("User");
+        kyle.setEmail("newuser@gmail.com");
+        kyle.setUserName("newuser");
+        kyle.setUserPass("newuser");
+
+        dao.updateUser(kyle);
+        assertEquals("first name not updated", kyle.getFirstName(), dao.getUser(newUser).getFirstName());
+        assertEquals("last name not updated", kyle.getLastName(), dao.getUser(newUser).getLastName());
+        assertEquals("email not updated", kyle.getEmail(), dao.getUser(newUser).getEmail());
+        assertEquals("username not updated", kyle.getUserName(), dao.getUser(newUser).getUserName());
+        assertEquals("userpass not updated", kyle.getUserPass(), dao.getUser(newUser).getUserPass());
+
+    }
 
     @After
     public void cleanup() {
-        // clean up temp user for tests
         if (newUser != 0) {
             dao.deleteUser(newUser);
         }
-    }
-
-    private LocalDate getLocalDate(String inputDate) {
-        DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        return LocalDate.parse(inputDate, DATE_FORMAT);
     }
 
 }

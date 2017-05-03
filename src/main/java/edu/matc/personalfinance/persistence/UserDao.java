@@ -162,27 +162,26 @@ public class UserDao {
         }
     }
 
-    /*public void getTransaction(int id) {
+    public void updateUser(User user) {
         Session session = null;
+        Transaction tx = null;
+
         try {
             session = openSession();
-            User user = (User) session.load(User.class, id);
-            TransactionRecord transactionRecord = (TransactionRecord) session.load(TransactionRecord.class, id);
-
-            for (TransactionRecord transRecords : user.getRecords()) {
-                logger.info("Transaction records: " + transRecords.getClass());
-            }
-        } catch (HibernateException he) {
-            logger.error("Exception: " + he);
+            tx = session.beginTransaction();
+            session.update(user);
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            logger.error("Hibernate Exception in updateUser(): ", e);
         } catch (Exception e) {
-            logger.error("Exception: " + e);
+            logger.error("Exception in updateUser(): " + e);
         } finally {
             if (session != null) {
                 session.close();
             }
         }
-
-    }*/
+    }
 
 
     private Session openSession() {

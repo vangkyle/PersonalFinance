@@ -6,12 +6,12 @@
         id="Your_WebApp_ID"
         version="2.5">
     <display-name>Archetype Created Web Application</display-name>
-
+    
     <!-- Protect the entries.jsp -->
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>entries</web-resource-name>
-            <url-pattern>/entries.jsp</url-pattern>
+            <web-resource-name>ExpenseEntry</web-resource-name>
+            <url-pattern>/expenseEntry</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>administrator</role-name>

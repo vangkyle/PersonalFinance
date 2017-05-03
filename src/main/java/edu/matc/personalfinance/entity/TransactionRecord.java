@@ -1,12 +1,10 @@
 package edu.matc.personalfinance.entity;
 
-import edu.matc.personalfinance.util.LocalDateAttributeConverter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Created by kvang on 2/14/17.
@@ -16,12 +14,10 @@ import java.time.LocalDate;
 public class TransactionRecord implements Serializable {
 
     private int transid;
-    private LocalDate date;
-    private String type;
-    private BigDecimal amount;
+    private Date date;
+    private double amount;
     private User user;
     private Category category;
-    private Subcategory subcategory;
 
     public TransactionRecord() {
     }
@@ -39,34 +35,25 @@ public class TransactionRecord implements Serializable {
     }
 
     @Column(name = "date")
-    @Convert(converter = LocalDateAttributeConverter.class)
-    public LocalDate getDate() {
+    //@Convert(converter = LocalDateAttributeConverter.class)
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    @Column(name = "type")
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Column(name = "amount")
-    public BigDecimal getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
     public User getUser() {
         return user;
@@ -76,7 +63,7 @@ public class TransactionRecord implements Serializable {
         this.user = user;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category")
     public Category getCategory() {
         return category;
@@ -86,13 +73,4 @@ public class TransactionRecord implements Serializable {
         this.category = category;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "subcategory")
-    public Subcategory getSubcategory() {
-        return subcategory;
-    }
-
-    public void setSubcategory(Subcategory subcategory) {
-        this.subcategory = subcategory;
-    }
 }

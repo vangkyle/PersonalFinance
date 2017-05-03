@@ -14,7 +14,6 @@
         $('#userResults').DataTable();
     });
 </script>
-
 <html>
     <body>
     <div>

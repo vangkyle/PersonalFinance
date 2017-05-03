@@ -1,16 +1,18 @@
 package edu.matc.personalfinance.persistence;
 
 import edu.matc.personalfinance.entity.Category;
-import edu.matc.personalfinance.entity.Subcategory;
 import edu.matc.personalfinance.entity.TransactionRecord;
 import edu.matc.personalfinance.entity.User;
 import org.apache.log4j.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -22,39 +24,24 @@ public class TransactionRecordDaoTest {
 
     private final Logger logger = Logger.getLogger(this.getClass());
     // TransactionRecord
-    TransactionRecordDao trd;
-    TransactionRecord tr;
-
-    int newTransactionId = 0;
+    TransactionRecordDao transactionRecordDao;
+    TransactionRecord transactionRecord;
+    int newTransaction = 0;
 
     // User
     UserDao dao;
     User user;
-
     int newUser1 = 0;
 
 
     // Category
-
     CategoryDao categoryDao;
     Category category;
-
-    int newCat3 = 0;
-
-    // Subcategory
-    SubcategoryDao subcategoryDao;
-    Subcategory subcategory;
-
-    int newSubcat3 = 0;
-
+    int newCat = 0;
+    int newCat2 = 0;
 
     @Before
     public void setUp() throws Exception {
-        trd = new TransactionRecordDao();
-        tr = new TransactionRecord();
-        tr.setDate(getLocalDate("30-02-2017"));
-        tr.setType("expense");
-        tr.setAmount(new BigDecimal(12.99));
 
         dao = new UserDao();
         user = new User();
@@ -68,52 +55,114 @@ public class TransactionRecordDaoTest {
         categoryDao = new CategoryDao();
         category = new Category();
         category.setCat_description("Family");
-        newCat3 = categoryDao.addCategory(category);
+        newCat = categoryDao.addCategory(category);
 
-        subcategoryDao = new SubcategoryDao();
-        subcategory = new Subcategory();
-        subcategory.setSubcat_description("Dinner");
-        newSubcat3 = subcategoryDao.addSubcategory(subcategory);
-
+        transactionRecordDao = new TransactionRecordDao();
+        transactionRecord = new TransactionRecord();
+        transactionRecord.setDate(getDateFormatted("10-02-2017"));
+        transactionRecord.setAmount(100000);
+        transactionRecord.setUser(user);
+        transactionRecord.setCategory(category);
 
     }
 
     @Test
     public void getAllTransactionRecord() throws Exception {
-        newTransactionId = trd.addTransactionRecord(tr);
-        List<TransactionRecord> transactionRecords = trd.getAllTransactionRecord();
+        newTransaction = transactionRecordDao.addTransactionRecord(transactionRecord);
+        List<TransactionRecord> transactionRecords = transactionRecordDao.getAllTransactionRecord();
         assertTrue(transactionRecords.size() > 0);
     }
 
     @Test
-    public void getTransactionById() throws Exception {
-        newTransactionId = trd.addTransactionRecord(tr);
+    public void getTransaction() throws Exception {
+        newTransaction = transactionRecordDao.addTransactionRecord(transactionRecord);
 
-        logger.info("category value is: " + tr.getCategory().getCat_description());
+        assertEquals("double", 12, 12.00, 0);
 
-        assertNotNull("no transaction returned", trd.getTransactionById(newTransactionId));
-        assertEquals("trans_id not return correctly", tr.getTransid(), trd.getTransactionById(newTransactionId).getTransid());
-        assertEquals("date not returned correctly", tr.getDate(), trd.getTransactionById(newTransactionId).getDate());
-        assertEquals("type not return correctly", tr.getType(), trd.getTransactionById(newTransactionId).getType());
-        assertEquals("amount not return correctly", tr.getAmount(), trd.getTransactionById(newTransactionId).getAmount());
-        //assertEquals("user not returned correctly", tr.getUser().getUserid(), trd.getTransactionById(newTransactionId).getUser().getUserid());
-        assertEquals("category not returned correctly", tr.getCategory().getCat_description(), trd.getTransactionById(newTransactionId).getCategory().getCat_description());
-        assertEquals("subcategory not returned correctly", tr.getSubcategory().getSubcat_description(), trd.getTransactionById(newTransactionId).getSubcategory().getSubcat_description());
-
+        assertNotNull("no transaction returned", transactionRecordDao.getTransaction(newTransaction));
+        assertEquals("date not returned correctly", transactionRecord.getDate(), transactionRecordDao.getTransaction(newTransaction).getDate());
+        assertEquals("amount not returned correctly", transactionRecord.getAmount(), transactionRecordDao.getTransaction(newTransaction).getAmount(), 0);
+        assertEquals("User not returned", transactionRecord.getUser().getUserid(), transactionRecordDao.getTransaction(newTransaction).getUser().getUserid());
+        assertEquals("Category not returned", transactionRecord.getCategory().getCategory_id(), transactionRecordDao.getTransaction(newTransaction).getCategory().getCategory_id());
     }
 
 
     @Test
     public void addTransactionRecord() throws Exception {
-        newTransactionId = trd.addTransactionRecord(tr);
-        assertNotEquals("no transaction added", 0, trd.getTransactionById(newTransactionId));
+        newTransaction = transactionRecordDao.addTransactionRecord(transactionRecord);
+        assertNotEquals("no transaction added", 0, transactionRecordDao.getTransaction(newTransaction));
+        assertEquals("date no added", transactionRecord.getDate(), transactionRecordDao.getTransaction(newTransaction).getDate());
+        assertEquals("amount not added ", transactionRecord.getAmount(), transactionRecordDao.getTransaction(newTransaction).getAmount(), 0);
+        assertEquals("User not added", transactionRecord.getUser().getUserid(), transactionRecordDao.getTransaction(newTransaction).getUser().getUserid());
+        assertEquals("Category not added", transactionRecord.getCategory().getCategory_id(), transactionRecordDao.getTransaction(newTransaction).getCategory().getCategory_id());
+
+
+    }
+
+    @Test
+    public void addFromExpenseEntry() throws Exception {
+        newTransaction = transactionRecordDao.addTransactionRecord(transactionRecord);
+
+        assertNotEquals("no user added from signup", 0, newTransaction);
+        assertEquals("transaction Id not returned correctly", transactionRecord.getTransid(), transactionRecordDao.getTransaction(newTransaction).getTransid());
+        assertEquals("date not returned correctly", transactionRecord.getDate(), transactionRecordDao.getTransaction(newTransaction).getDate());
+        assertEquals("amount not returned correctly", transactionRecord.getAmount(), transactionRecordDao.getTransaction(newTransaction).getAmount(), 0);
+        assertEquals("category not returned correctly", transactionRecord.getCategory().getCategory_id(), transactionRecordDao.getTransaction(newTransaction).getCategory().getCategory_id());
+
     }
 
     @Test
     public void deleteTransactionRecord() throws Exception {
-        trd.addTransactionRecord(tr);
-        trd.deleteTransactionRecord(tr.getTransid());
-        assertNull("transaction not deleted", trd.getTransactionById(tr.getTransid()));
+        transactionRecordDao.addTransactionRecord(transactionRecord);
+        transactionRecordDao.deleteTransactionRecord(8);
+        //assertNull("transaction not deleted", transactionRecordDao.getTransaction(transactionRecord.getTransid()));
+    }
+
+    @Test
+    public void updateTransactionRecord() throws Exception {
+        newTransaction = transactionRecordDao.addTransactionRecord(transactionRecord);
+
+        Category category2 = new Category();
+        category2.setCat_description("New Category");
+        newCat2 = categoryDao.addCategory(category2);
+
+        transactionRecord.setDate(getDateFormatted("12-12-2016"));
+        transactionRecord.setAmount(910.89);
+        transactionRecord.setUser(user);
+        transactionRecord.setCategory(category);
+
+        transactionRecordDao.updateTransactionRecord(transactionRecord);
+        assertEquals("date not updated", transactionRecord.getDate(), transactionRecordDao.getTransaction(newTransaction).getDate());
+        assertEquals("amount not updated", transactionRecord.getAmount(), transactionRecordDao.getTransaction(newTransaction).getAmount(), 0);
+        assertEquals("user id not updated", transactionRecord.getUser().getUserid(), transactionRecordDao.getTransaction(newTransaction).getUser().getUserid());
+        assertEquals("category not updated", transactionRecord.getCategory().getCat_description(), transactionRecordDao.getTransaction(newTransaction).getCategory().getCat_description());
+
+    }
+
+    @After
+    public void cleanup() {
+        if (newUser1 != 0) {
+            dao.deleteUser(newUser1);
+        }
+
+        if (newCat != 0) {
+            categoryDao.deleteCategory(newCat);
+        }
+
+        if (newTransaction != 0) {
+            transactionRecordDao.deleteTransactionRecord(newTransaction);
+        }
+    }
+
+    private Date getDateFormatted(String inputDate2) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = null;
+        try {
+            date = dateFormat.parse(inputDate2);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 
     private LocalDate getLocalDate(String inputDate) {

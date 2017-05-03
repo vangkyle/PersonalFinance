@@ -26,7 +26,6 @@
         <mapping class="edu.matc.personalfinance.entity.UserRoles"/>
         <mapping class="edu.matc.personalfinance.entity.TransactionRecord"/>
         <mapping class="edu.matc.personalfinance.entity.Category"/>
-        <mapping class="edu.matc.personalfinance.entity.Subcategory"/>
 
     </session-factory>
 

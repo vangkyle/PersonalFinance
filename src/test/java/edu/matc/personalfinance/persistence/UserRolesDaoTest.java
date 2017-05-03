@@ -90,7 +90,7 @@ public class UserRolesDaoTest {
 
 
     @After
-    public void tearDown() throws Exception {
+    public void cleanup() throws Exception {
         if (newRole != 0) {
             URDao.deleteRole(newRole);
         }

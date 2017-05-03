@@ -2,6 +2,7 @@ package edu.matc.personalfinance.persistence;
 
 import edu.matc.personalfinance.entity.Category;
 import org.apache.log4j.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,6 +35,7 @@ public class CategoryDaoTest {
         newCat1 = categoryDao.addCategory(cat);
         List<Category> categories = categoryDao.getAllCategory();
         assertTrue(categories.size() > 0);
+        logger.info("Get all category: " + categories);
     }
 
     @Test
@@ -61,6 +63,13 @@ public class CategoryDaoTest {
         categoryDao.deleteCategory(cat.getCategory_id());
         assertNull("category not deleted", categoryDao.getCategory(cat.getCategory_id()));
 
+    }
+
+    @After
+    public void cleanup() {
+        if (newCat1 != 0) {
+            categoryDao.deleteCategory(newCat1);
+        }
     }
 
 }
